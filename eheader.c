@@ -41,11 +41,26 @@ main(int argc, char **argv[]) {
     printf("  File Version %x\n", ehdr.e_ident[6]);
 
     printf("Object File Type: ");
-    if(ehdr.e_type == ET_NONE) {printf("No file type\n");}
-    if(ehdr.e_type == ET_REL) {printf("Relocatable file\n");}
-    if(ehdr.e_type == ET_EXEC) {printf("Executable file\n");}
-    if(ehdr.e_type == ET_DYN) {printf("Shared Object File\n");}
-    if(ehdr.e_type == ET_CORE) {printf("Core file\n");}
+    switch(ehdr.e_type) {
+        case ET_NONE:
+            printf("No file type\n");
+        case ET_REL:
+            printf("Relocatable file\n");
+        case ET_EXEC:
+            printf("Executable file\n");
+        case ET_DYN:
+            printf("Shared Object File\n");
+        case ET_CORE:
+            printf("Core file\n");
+        default:
+            printf("Shouldn't get here..\n");
+    }
+    
+ //   if(ehdr.e_type == ET_NONE) {printf("No file type\n");}
+ //   if(ehdr.e_type == ET_REL) {printf("Relocatable file\n");}
+ //   if(ehdr.e_type == ET_EXEC) {printf("Executable file\n");}
+ //   if(ehdr.e_type == ET_DYN) {printf("Shared Object File\n");}
+ //   if(ehdr.e_type == ET_CORE) {printf("Core file\n");}
 
     // edit
     printf("Required Architecture: ");
