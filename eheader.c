@@ -56,11 +56,6 @@ main(int argc, char **argv[]) {
             printf("Shouldn't get here..\n");
     }
     
- //   if(ehdr.e_type == ET_NONE) {printf("No file type\n");}
- //   if(ehdr.e_type == ET_REL) {printf("Relocatable file\n");}
- //   if(ehdr.e_type == ET_EXEC) {printf("Executable file\n");}
- //   if(ehdr.e_type == ET_DYN) {printf("Shared Object File\n");}
- //   if(ehdr.e_type == ET_CORE) {printf("Core file\n");}
 
     // edit
     printf("Required Architecture: ");
