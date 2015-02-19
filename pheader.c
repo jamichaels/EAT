@@ -21,7 +21,7 @@ main(int argc, char **argv[]) {
     char ptype[30];
 
     if(argc < 2) { 
-        printf("\n64 bit ELF Program Header Reader v 0.01a - sblip - Metaphase/KNTLC\n");
+        printf("\n64 bit ELF Program Header Reader v 0.01a - sblip \n");
         printf("usage: %s <file>\n",(char *)argv[0]);
         exit(-1);
     }
