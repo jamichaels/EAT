@@ -17,8 +17,13 @@ main(int argc, char **argv[]) {
 
     FILE* fp;
 
-    if(argc < 2) { goto usage; }
-    
+    if(argc < 2) {
+        printf("\n64 bit ELF Header Reader v 0.01a - sblip - Metaphase\n");
+        printf("usage: %s <file>\n",(char *)argv[0]);
+        exit(-1);
+    }
+
+
     // Open the file and read the ELF header
     fp = fopen((char *)argv[1], "r");
     fread(&ehdr,sizeof(Elf64_Ehdr),1,fp);
@@ -43,15 +48,15 @@ main(int argc, char **argv[]) {
     printf("Object File Type: ");
     switch(ehdr.e_type) {
         case ET_NONE:
-            printf("No file type\n");
+            printf("No file type\n"); break;
         case ET_REL:
-            printf("Relocatable file\n");
+            printf("Relocatable file\n"); break;  
         case ET_EXEC:
-            printf("Executable file\n");
+            printf("Executable file\n"); break;
         case ET_DYN:
-            printf("Shared Object File\n");
+            printf("Shared Object File\n"); break; 
         case ET_CORE:
-            printf("Core file\n");
+            printf("Core file\n"); break; 
         default:
             printf("Shouldn't get here..\n");
     }
@@ -79,10 +84,6 @@ main(int argc, char **argv[]) {
     printf("Index of string table in Section Header Table: %x\n",ehdr.e_shstrndx);
     exit(1);
 
-usage:
-    printf("\n64 bit ELF Header Reader v 0.01a - sblip - Metaphase\n");
-    printf("usage: %s <file>\n",(char *)argv[0]);
-    exit(-1);
 }
 
 not_elf()
