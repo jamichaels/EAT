@@ -18,7 +18,7 @@ main(int argc, char **argv[]) {
     FILE* fp;
 
     if(argc < 2) {
-        printf("\n64 bit ELF Header Reader v 0.01a - sblip - Metaphase\n");
+        printf("\n64 bit ELF Header Reader v 0.01a - sblip\n");
         printf("usage: %s <file>\n",(char *)argv[0]);
         exit(-1);
     }
